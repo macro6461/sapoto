@@ -29,8 +29,8 @@ const App = () => {
   return (
     <View>
       <Nav view={view} setView={setView} menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
-      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
       <View style={styles.container}>{views[view]}</View>
+      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
     </View>
     // <NavigationContainer>
     //   <Stack.Navigator headerMode="screen">
