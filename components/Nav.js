@@ -13,9 +13,14 @@ const Nav = (props) =>{
 
     const {view, setView, menuOpen, setMenuOpen} = props;
 
+    const handleMessages = () =>{
+        setView(2)
+        setMenuOpen(false)
+    }
+
     var finalIcon;
 
-    if (view === 1){
+    if (view !== 0){
         finalIcon = <Icon name="earth-outline" size={50} onPress={()=>setView(0)} color="#fff" />
     } else {
         finalIcon = <Icon name="options-outline" size={50} onPress={()=>setView(1)} color="#fff" />
@@ -29,6 +34,7 @@ const Nav = (props) =>{
         <View style={styles.nav}>
             <Icon name="menu" size={50} onPress={()=>setMenuOpen(!menuOpen)} color="#fff" />
             {finalIcon}
+            <Icon name="send-outline" size={40}  onPress={handleMessages} color="#fff" />
         </View>
     )
 };

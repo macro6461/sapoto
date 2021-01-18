@@ -10,6 +10,7 @@ import Login from './components/Login';
 import Dash from './components/Dash';
 import Filters from './components/Filters';
 import Settings from './components/Settings';
+import Messages from './components/Messages';
 import Stats from './components/Stats';
 import styles from './style';
 import { set } from 'react-native-reanimated';
@@ -18,7 +19,8 @@ const Stack = createStackNavigator();
 
 const views = {
   0: <Dash/>,
-  1: <Filters/>
+  1: <Filters/>,
+  2: <Messages/>
 }
 
 const App = () => {
@@ -27,11 +29,14 @@ const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <View>
-      <Nav view={view} setView={setView} menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
-      <View style={styles.container}>{views[view]}</View>
+    // <View style={{position: 'relative'}}>
+      <View style={styles.container}>
+        <View style={styles.body}>{views[view]}</View>
+        <Nav view={view} setView={setView} menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
-    </View>
+      </View>
+    // </View>
+
     // <NavigationContainer>
     //   <Stack.Navigator headerMode="screen">
     //     <Stack.Screen

@@ -3,9 +3,14 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
+      justifyContent: 'flex-end',
+    },
+    body:{
+      width: '100%',
+      flex: 1,
+      flexDirection: 'row',
       justifyContent: 'center',
+      backgroundColor: '#fff'
     },
     img:{
       width: 100, 
@@ -13,14 +18,14 @@ const styles = StyleSheet.create({
     },
     item: {
       color: 'red'
-    },
+    }, 
     nav: {
       width: '100%',
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
       padding: 10,
-      backgroundColor: 'blue'
+      backgroundColor: '#a4d4ff'
     },
     menu:{
       position: 'absolute',
