@@ -11,7 +11,7 @@ const routes = {
 
 const Nav = (props) =>{
 
-    const {view, setView} = props;
+    const {view, setView, menuOpen, setMenuOpen} = props;
 
     var finalIcon;
 
@@ -23,7 +23,7 @@ const Nav = (props) =>{
 
     return (
         <View style={styles.nav}>
-            <Icon name="menu" size={50} />
+            <Icon name="menu" size={50} onPress={()=>setMenuOpen(!menuOpen)}/>
             {finalIcon}
         </View>
     )

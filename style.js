@@ -21,6 +21,17 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       padding: 10,
       backgroundColor: 'blue'
+    },
+    menu:{
+      position: 'absolute',
+      top: 0,
+      height: 400,
+      width: 300,
+      borderBottomColor: 'black',
+      borderStyle: 'solid',
+      borderWidth: 1,
+      backgroundColor: '#fff',
+      zIndex: 1000
     }
   });
 

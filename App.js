@@ -5,27 +5,31 @@ import { createStackNavigator } from '@react-navigation/stack';
 import {View, Text } from 'react-native';
 import Nav from './components/Nav';
 import Accountability from './components/Accountability';
+import Menu from './components/Menu';
 import Login from './components/Login';
 import Dash from './components/Dash';
 import Filters from './components/Filters';
 import Settings from './components/Settings';
 import Stats from './components/Stats';
 import styles from './style';
+import { set } from 'react-native-reanimated';
 
 const Stack = createStackNavigator();
 
 const views = {
   0: <Dash/>,
-  1: <Filters/>,
+  1: <Filters/>
 }
 
 const App = () => {
   
   const [view, setView] = useState(0)
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <View>
-      <Nav view={view} setView={setView} />
+      <Nav view={view} setView={setView} menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
       <View style={styles.container}>{views[view]}</View>
     </View>
     // <NavigationContainer>
